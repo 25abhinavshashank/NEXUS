@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #container{
+            font-size: 70px;
+            height: 50vh;
+            background-color: sandybrown;
+            border-radius: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 10px;
+        }
+        .ab{
+            margin: 10px;
+        }
+        h1{ display: flex;
+            justify-content: center;
+            align-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+<body style="background-color: black; color: whitesmoke;">
+    <h1 >Time remaining for Summer Olympics</h1>
+
+    <div id="container">
+       
+        <div id="day" class="ab" ></div>
+        <div id="hrs"class="ab" ></div>
+        <div id="min"class="ab" ></div>
+        <div id="sec"class="ab" ></div>
+        
+    </div>
+
+
+        
+        
+
+    <script>
+        const endtime=new Date("2028-7-16 23:59:59").getTime();
+       function updateCounter(){
+        const countdown=document.getElementById("container")
+         const time=new Date().getTime();
+       
+
+        const timeLeft=endtime-time
+
+        if(timeLeft<=0) {
+            countdown.innerHTML="Countdown is OVER";
+            clearInterval(timer)
+            return;
+        }
+        const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+         const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000  * 60));
+         const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+         const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+         document.getElementById("day").innerHTML = "Days: " + days+" </br>";
+            document.getElementById("hrs").innerHTML = "Hours: " + hours+" ";
+            document.getElementById("min").innerHTML = "Minutes: " + minutes+" ";
+            document.getElementById("sec").innerHTML = "Seconds: " + seconds+" ";
+        
+         
+
+
+    }
+
+    setInterval(updateCounter,1000)
+    
+    </script>
+</body>
+</html>
