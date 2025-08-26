@@ -102,8 +102,9 @@ Examples of runtime errors include:
 Dividing by zero.
 Accessing undefined variables or null references.
 Running out of memory.
-Examples of Runtime Activities:
 
+
+Examples of Runtime Activities: 
 Executing code instructions.
 Handling user inputs.
 Interacting with APIs or databases -->
